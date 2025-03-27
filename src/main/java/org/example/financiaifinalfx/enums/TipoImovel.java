@@ -1,4 +1,8 @@
 package org.example.financiaifinalfx.enums;
 
-public class TipoImovel {
+public enum TipoImovel {
+
+    CASA,
+    APARTAMENTO
+
 }

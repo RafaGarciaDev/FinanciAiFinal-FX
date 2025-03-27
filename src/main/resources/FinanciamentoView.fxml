@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import java.net.URL?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.financiaifinalfx.view.FinanciamentoView_Controller"
+      spacing="20" style="-fx-padding: 25; -fx-background-color: #f5f5f5;">
+
+    <Label text="FinanciAi - Simulação de Financiamento"
+           styleClass="header-title"/>
+
+    <TitledPane text="Dados do Cliente" styleClass="titled-pane">
+        <GridPane hgap="10" vgap="10">
+            <Label text="Nome Completo:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtNome" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+            <Label text="CPF:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtCpf" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Renda Mensal:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <TextField fx:id="txtRenda" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+        </GridPane>
+    </TitledPane>
+
+    <TitledPane text="Dados do Imóvel" styleClass="titled-pane">
+        <GridPane hgap="10" vgap="10">
+            <Label text="Tipo do Imóvel:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbTipoImovel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Valor do Imóvel (R$):" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="txtValorImovel" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+        </GridPane>
+    </TitledPane>
+
+    <TitledPane text="Condições do Financiamento" styleClass="titled-pane">
+        <GridPane hgap="10" vgap="10">
+            <Label text="Entrada (%):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtEntrada" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Taxa Juros Anual (%):" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="txtJuros" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+            <Label text="Prazo (meses):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtPrazo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Sistema de Amortização:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <ComboBox fx:id="cbAmortizacao" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+        </GridPane>
+    </TitledPane>
+
+    <Button text="Simular Financiamento" onAction="#calcularFinanciamento"
+            styleClass="primary-button"/>
+
+    <TitledPane text="Resultado da Simulação" styleClass="titled-pane" expanded="false">
+        <TableView fx:id="tabelaParcelas" style="-fx-max-height: 300;">
+            <columns>
+                <TableColumn text="Parcela" fx:id="colunaNumero">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numeroParcela" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Valor (R$)" fx:id="colunaValor">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="valorParcela" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Amortização (R$)" fx:id="colunaAmortizacao">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="valorAmortizacao" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Juros (R$)" fx:id="colunaJuros">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="valorJuros" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </TitledPane>
+
+
+</VBox>

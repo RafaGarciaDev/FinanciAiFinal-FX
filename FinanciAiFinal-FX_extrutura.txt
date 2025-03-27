@@ -1,0 +1,45 @@
+FinanciAiFinal-FX
+├── .gitignore
+├── build.gradle
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── org
+│   │   │       └── example
+│   │   │           └── financialfinalfx
+│   │   │               ├── controller
+│   │   │               │   ├── FinanciamentoController.java
+│   │   │               │   └── HelloController.java
+│   │   │               ├── dao
+│   │   │               │   ├── ClienteDAO.java
+│   │   │               │   ├── FinanciamentoDAO.java
+│   │   │               │   ├── ImovelDAO.java
+│   │   │               │   └── ParcelasDAO.java
+│   │   │               ├── model
+│   │   │               ├── entities
+│   │   │               │   ├── Cliente.java
+│   │   │               │   ├── Financiamento.java
+│   │   │               │   ├── Imovel.java
+│   │   │               │   └── Parcelas.java
+│   │   │               ├── enums
+│   │   │               │   ├── TipoAmortizacao.java
+│   │   │               │   └── TipoImovel.java
+│   │   │               ├── services
+│   │   │               │   ├── Amortizacao.java
+│   │   │               │   ├── Price.java
+│   │   │               │   └── SAC.java
+│   │   │               ├── util
+│   │   │               │   ├── Conexao.java
+│   │   │               │   └── GeradorPDF.java
+│   │   │               ├── view
+│   │   │               │   └── FinanciamentoView.java
+│   │   │               ├── HelloApplication.java
+│   │   │               └── module-info.java
+│   │   └── resources
+│   └── test
+├── gradle
+├── build
+└── idea
